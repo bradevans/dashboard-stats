@@ -7,11 +7,11 @@ $(function () {
         $(".nodata-show").hide();
         
         var late_column,
-	        on_time_column,
-        	reviewer_column,
-	        reviewer_column1,
-        	reviewer_column2,
-			unsubmitted;
+            on_time_column,
+            reviewer_column,
+	    reviewer_column1,
+            reviewer_column2,
+	    unsubmitted;
 
         function Render(average, chart_id, color, is_reviewer, users, reviewer_bottom_list) {
             this.average = average;
