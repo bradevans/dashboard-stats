@@ -40,13 +40,13 @@ $(function () {
             this.circles = function () {
             
             	var arc,
-	            	background,
-	            	foreground,
-	            	new_angle,     		      	
-      		      	svg,
-      		      	height = 208,
-	            	tau = 2 * Math.PI,
-	            	width = height;
+	            background,
+	            foreground,
+	            new_angle,     		      	
+      		    svg,
+      		    height = 208,
+	            tau = 2 * Math.PI,
+	            width = height;
             	
                 function arcTween(transition, newAngle) {
                     transition.attrTween("d", function (d) {
@@ -58,7 +58,7 @@ $(function () {
                     });
                 }
 	            
-				arc = d3.svg.arc()
+		arc = d3.svg.arc()
                     .innerRadius(96)
                     .outerRadius(width / 2)
                     .startAngle(0);
@@ -77,7 +77,7 @@ $(function () {
                 svg.append("text")
                     .text(function () {
                         switch (chart_id) {
-                    	case "on-time":
+                        case "on-time":
                             return "On Time";
                             break;
                         case "late":
@@ -121,21 +121,21 @@ $(function () {
             this.tables = function () {
                 
                 var chart_id_sub,
-                	list_first_row,
-                	list_last_row,
-                	reviewer1_chart_id_sub,
-                	reviewer2_chart_id_sub,
-                	x_scale,
-                	_this = this,
-                	list = d3.select("." + _this.chart_id + "-col").append("div").attr("id", _this.chart_id + "-table-div"),
-                	svg_width = 158;
+                    list_first_row,
+                    list_last_row,
+                    reviewer1_chart_id_sub,
+                    reviewer2_chart_id_sub,
+                    x_scale,
+                    _this = this,
+                    list = d3.select("." + _this.chart_id + "-col").append("div").attr("id", _this.chart_id + "-table-div"),
+                    svg_width = 158;
                 
                 list_first_row = list.selectAll("table")
                     .data(_this.data)
                     .enter()
                     .append("table")
                     .attr("id", function (d, i) {
-	                        if (_this.chart_id === "reviewer-1") {
+	                if (_this.chart_id === "reviewer-1") {
                             reviewer1_chart_id_sub = _this.chart_id.substring(0, 2);
                             return reviewer1_chart_id_sub + (i + 1) + "1";
                         } else if (_this.chart_id === "reviewer-2") {
